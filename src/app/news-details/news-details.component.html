@@ -1,0 +1,11 @@
+<div class="container">
+    <div *ngIf="article?.title" class="well hoverwell thumbnail">
+        <h1>{{ article?.title }} {{article?.likes}}</h1>
+          <img class="fullImage" *ngIf="article?.urlToImage" [src]="article?.urlToImage">
+                  
+          <div class="info" *ngIf="article?.publishedAt || article?.author">{{ article?.publishedAt  | date  }} by {{ article?.author }}</div>
+          <br>
+          <p class="article-content" *ngIf="article?.description">{{ article?.description }} {{article.likes}} <span><a [href]="article.url" target="_blank">Read more</a></span></p>
+          {{article.likes}}
+        </div>
+  </div>

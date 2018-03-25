@@ -1,0 +1,28 @@
+//$main: #232f3e;
+//$main: #E2E41A;
+    $main : #FF395F;
+.bg-main {
+    background-color: $main;
+}
+
+.navbar-brand {
+    font-size: 20pt;
+}
+
+a {
+    font-size: 12pt;
+    margin-left: 15px;
+    color:white;
+    font-weight: 600;
+}
+
+.nav.navbar-nav {
+    font-size: 15px;
+}   
+li > a.active {
+    color: rgb(24, 23, 23);
+}
+
+nav {
+    height: 70px;
+}

@@ -1,0 +1,15 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12 col-sm-offset-10">
+            <button *ngIf="articles.length" class="btn btn-danger clear-btn pull-right" (click)="clear()">Clear Storage</button>
+          </div>
+        </div>
+    
+    <div class="row">
+        
+        <div class="col-md-4 col-sm-6 pull-left" *ngFor="let article of articles">
+        <app-news (eventClick)="updateSavedArticles()" [isSaved]="true" *ngIf="article.source === 'trending-news'" [news]="article"></app-news>
+   </div>
+  
+    </div>
+  </div>

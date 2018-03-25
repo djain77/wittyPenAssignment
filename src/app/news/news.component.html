@@ -1,0 +1,19 @@
+<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+<div *ngIf="news?.title" class="well hoverwell thumbnail story" >
+    
+    <a *ngIf="news?.urlToImage" [routerLink]="['/detailed/trending-news', news.title]" class="story-image" 
+        [ngStyle]="{'background-image': 'url(' + news.urlToImage+')'}"></a>
+   
+    <div class="story-title">
+      <div class="story-content">
+        <a   [routerLink]="['/detailed/trending-news', news.title]"><h4>{{ news?.title }} </h4></a>     
+      </div>
+      <div [class.like-section]="wasClicked" >
+        <i class="fa fa-heart" (click)="likePost(news)" [ngStyle]="{color: isLiked ? 'red' : 'white'}" >
+          <span class="likeCount"> {{likeCount}} </span> </i>
+      </div>
+      <i *ngIf="!isSaved" class="fa fa-star save-btn" (click)="save(news)" [ngStyle]="{color: favourite ? '#FAC227' : 'white'}" > </i>
+      <i *ngIf="!isSaved" class="fa fa-share"></i>         
+      <i *ngIf="isSaved" class="fa fa-trash story-btn" (click)="removeOnClick(news)" >Remove</i>
+    </div>
+</div>
